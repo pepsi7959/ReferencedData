@@ -1,0 +1,15 @@
+export default [
+    { title: 'รหัสทะเบียนเอกสาร', field: 'GovRegistry_ID', type: 'string'},
+    { title: 'รหัสทะเบียนเอกสารตามเจ้าของ', field: 'GovRegistry_RefCode', type: 'string'},
+    { title: 'วันที่ประกาศใช้รหัสทะเบียนเอกสาร', field: 'GovRegistry_RefCodeDate', type: 'string'},
+    { title: 'ชื่อทะเบียนเอกสารภาษาไทย', field: 'GovRegistryName_th', type: 'string'},
+    { title: 'ชื่อทะเบียนเอกสารภาษาอังกฤษ', field: 'GovRegistryName_en', type: 'string'},
+    { title: 'ชื่อทะเบียนเอกสารไม่เป็นทางการ', field: 'GovRegistryName_informal', type: 'string'},
+    { title: 'วันที่ประกาศใช้ชื่อ', field: 'GovRegistryName_Date', type: 'string'},
+    { title: 'สถานะเอกสารที่ใช้อยู่', field: 'GovRegistryActive', type: 'string'},
+    { title: 'สถานะเอกสารที่ยกเลิก', field: 'GovRegistryExpired', type: 'string'},
+    { title: 'ชื่อเอกสารอื่น', field: 'GovRegistry_NameTH_Others', type: 'string'},
+    { title: 'ประเภทหนังสือราชการ', field: 'GovRegistry_DocType', type: 'string'},
+    { title: 'ประเภทย่อยหนังสือราชการ', field: 'GovRegistry_DocType_Sub', type: 'string'},
+    { title: 'หน่วยงานเจ้าของเอกสาร', field: 'GovRegistry_DocOwner', type: 'string'},
+];

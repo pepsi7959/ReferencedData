@@ -1,0 +1,18 @@
+export default [
+    { title: 'รหัสหน่วยงาน', field: 'GovAgency_ID', type: 'string'},
+    { title: 'รหัสสารบรรณประจำหน่วยงาน', field: 'GovAgency_RefCode', type: 'string'},
+    { title: 'วันที่ประกาศใช้รหัสสารบรรณ', field: 'GovAgency_RefCodeDate', type: 'string'},
+    { title: 'ชื่อหน่วยงานภาษาไทย', field: 'GovAgencyName_TH', type: 'string'},
+    { title: 'ชื่อหน่วยงานภาษาอังกฤษ', field: 'GovAgencyName_EN', type: 'string'},
+    { title: 'วันที่ประกาศใช้ชื่อ', field: 'GovAgencyName_Date', type: 'string'},
+    { title: 'รหัสลำดับชั้นหน่วยงาน', field: 'GovAgencyOneUp_ID', type: 'string'},
+    { title: 'ผู้บริหารสูงสุดภาษาไทย', field: 'GovAgencyChiefTitle_TH', type: 'string'},
+    { title: 'ผู้บริหารสูงสุดภาษาอังกฤษ', field: 'GovAgencyChiefTitle_EN', type: 'string'},
+    { title: 'หน่วยงานที่ยุบเลิกไปแล้ว', field: 'GovAgencyExpired', type: 'string'},
+    { title: 'ชื่อตำแหน่งสูงสุด', field: 'GovAgencyChiefTitle', type: 'string'},
+    { title: 'เว็บไซต์ของหน่วยงาน', field: 'GovAgency_Source', type: 'string'},
+    { title: 'ความปลอดภัยของเว็บไซต์', field: 'WebsiteSecurity', type: 'string'},
+    { title: 'ชื่อย่อหน่วยงานภาษาไทย', field: 'GovAgency_AbbTH', type: 'string'},
+    { title: 'ชื่อย่อหน่วยงานภาษาอังกฤษ', field: 'GovAgency_AbbEN', type: 'string'},
+    { title: 'ประเภทหน่วยงาน', field: 'GovAgency_Type', type: 'string'},
+];
