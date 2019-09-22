@@ -1,3 +1,25 @@
+// MIT License
+
+// Copyright 2019-present, Narongsak Mala <narongsak.mala@gmail.com>
+
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+
 import React, { Component, Fragment } from "react";
 import { Card, CardBody, CardTitle, Row, Col, Button, Alert, Form, CustomInput, FormGroup, Label, Input } from "reactstrap";
 import {
@@ -8,11 +30,36 @@ import {
    FileText,
    Mail,
    AlertOctagon
-} from "react-feather";
+} from "react-feather"
 import DataTable from "./../datatable/datatable"
+import Dropzone from '../dropzone/Dropzone'
 
 class Document extends Component {
 
+    constructor (props){
+        super(props);
+        this.state = {
+            files: "",
+            status: "idle"
+          };
+        this.onUpload = this.onUpload.bind(this);
+        this.onFilesAdded = this.onFilesAdded.bind(this);
+    }
+
+   onUpload = event =>{
+    alert("Uploading file: " + this.state.file.name);
+   }
+
+   onFilesAdded = file =>{
+       alert("File:  " + file[0].name + " has been added");
+       console.log(file[0].name);
+       this.state = {file: file[0]};
+   }
+
+   onClickSearch = event => {
+        alert("Ok");
+   }
+   
    render() {
       return (
          <Fragment>
@@ -27,7 +74,7 @@ class Document extends Component {
                               <div className="form-actions">
                               </div>
                               <Row className="justify-content-md-center">
-                                 <Col md="6">
+                                 <Col sm="7" md="8">
                                     <div className="form-body">
                                        <FormGroup>
                                           <Label for="eventInput1">กระทรวง หรือเทียบเท่า</Label>
@@ -45,6 +92,10 @@ class Document extends Component {
                                        </FormGroup>
                                     </div>
                                  </Col>
+                                 <Col sm="5" md="4">
+                                    <Dropzone file={this.state.file} onFilesAdded={this.onFilesAdded}/>
+                                    <Button color="info" onClick={this.onUpload}> อัพโหลด </Button>
+                                </Col>
                               </Row>
 
                               <div className="form-actions center">
@@ -54,9 +105,6 @@ class Document extends Component {
                                     </Button>
                                     <Button color="success" className="mr-1" onClick={this.onClickSearch} >
                                         <CheckSquare size={16} color="#FFF" /> ค้นหา
-                                    </Button>
-                                    <Button color="dark"  className="mr-1" onClick={this.onClickSearch} >
-                                        <FileText size={16} color="#FFF" /> อัพโหลด
                                     </Button>
                                  </div>
                               </div>
